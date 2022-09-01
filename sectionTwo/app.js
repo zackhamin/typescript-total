@@ -1,10 +1,15 @@
-var person = {
-    name: "ishaq",
-    age: 33,
-    hobbies: ["cycling", "running"]
-};
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+//union types
+function combine(input1, input2, resultConversion) {
+    var result;
+    if ((typeof input1 === "number" && typeof input2 === "number") ||
+        resultConversion === "number") {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-console.log(person.name);
+console.log(combine(1, 9, "number"));
+console.log(combine("12", "12", "text"));
+console.log(combine("Ishaq", "Shamia", "text"));
